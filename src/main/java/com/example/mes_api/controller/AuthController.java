@@ -22,13 +22,14 @@ import java.util.Optional;
 @CrossOrigin(origins = "*")
 public class AuthController {
 
+    @Autowired
     private UserRepository userRepository;
-
+    @Autowired
     private JWTService jwtService;
-
-    private PasswordEncoder passwordEncoder;
-
+    @Autowired
     private TokenRepository tokenRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @PostMapping("/registration")
     public ResponseEntity<Object> register(@Valid @RequestBody User user) {

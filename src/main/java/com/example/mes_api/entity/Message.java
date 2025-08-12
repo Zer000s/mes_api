@@ -5,6 +5,7 @@ import lombok.*;
 import java.time.Instant;
 
 @Entity
+@Table(name = "messages")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Message {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

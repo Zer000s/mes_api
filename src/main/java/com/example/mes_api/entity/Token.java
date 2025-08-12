@@ -2,8 +2,10 @@ package com.example.mes_api.entity;
 
 import jakarta.persistence.*;
 
+import java.time.Instant;
+
 @Entity
-@Table(name = "token")
+@Table(name = "tokens")
 public class Token {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,6 +13,7 @@ public class Token {
 
     private Long userId;
     private String refreshToken;
+    private Instant createdAt = Instant.now();
 
     public Long getId() {
         return id;
